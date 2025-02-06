@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkar Foods || Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="about2.css">
+    <link rel="stylesheet" href="lightbox.min.css">
+
+    <!-- Boxicons link -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!-- Remix Icons link -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <!-- Google Fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+    <div class="container">
+         <!-- Header -->
+    <header>
+        <a href="#" class="logo">
+            <img src="img/logo.png" alt="Logo">
+        </a>
+        <ul class="navlist">
+            <li><a href="About.html">About</a></li>
+            <li><a href="Products.html">Products</a></li>
+            <li><a href="Services.html">Services</a></li>
+        </ul>
+        <div class="right-content">
+            <!-- Button for Log Out -->
+            <a id="logoutBtn" href="#" class="nav-btn" style="display: none;" onclick="logout()">Log Out</a>
+            <!-- Button for Sign In, hidden when logged in -->
+            <a id="signInBtn" href="Sign In.html" class="nav-btn">Sign In</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    
+    </header>
+
+    <!-- hero -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2 data-aos="fade-right" data-aos-duration="1400" >Welcome to Turkar Foods!</h2>
+            <p data-aos="fade-right" data-aos-duration="1400" data-aos-delay="300">We are a local company specializing in the production and distribution of fresh organic food. Committed to delivering high-quality products directly to local stores and restaurants, we cultivate organic fruits and vegetables with care to ensure a natural and healthy taste that enhances your lifestyle.</p>
+           
+        </div>
+        
+        <div class="hero-img" data-aos="zoom-in" data-aos-duration="1400">
+            <img src="about img/agriculture-food-fertilisers-leaf-vegetable-farmers-5b31e6d169e25f8b5c007bc1a7081b04.png" alt="">
+        </div>
+        
+    </section>
+
+    <section class="services">
+        <div class="service">
+            <a href="about img/ingredient-recipe.png" data-lightbox="my-service">
+                <img src="about img/ingredient-recipe.png" alt="">
+            </a>
+        </div>
+        <div class="service">
+            <a href="about img/57e48b2ee7348550fd4d0c9407f464bd-removebg-preview.png" data-lightbox="my-service">
+                <img src="about img/57e48b2ee7348550fd4d0c9407f464bd-removebg-preview.png" alt="">
+            </a>
+        </div>
+        <div class="service">
+            <a href="about img/xxxx-removebg-preview.png" data-lightbox="my-service">
+                <img src="about img/xxxx-removebg-preview.png" alt="">
+            </a>
+        </div>
+        <div class="service">
+            <a href="about img/lettuce.png" data-lightbox="my-service">
+                <img src="about img/lettuce.png" alt="">
+            </a>
+        </div>
+
+    </section>
+
+    <div class="icons">
+        <a href="https://web.facebook.com/profile.php?id=61551738759630&sk=about&locale=ar_AR" data-aos="fade-in" data-aos-duration="1400" data-aos-delay="600"><i class="ri-facebook-line"></i></a>
+        <a href="#" data-aos="fade-in" data-aos-duration="1400" data-aos-delay="700"><i class="ri-youtube-fill"></i></a>
+        <a href="#" data-aos="fade-in" data-aos-duration="1400" data-aos-delay="800"><i class="ri-instagram-fill"></i></a>
+    </div>
+
+    <div class="scroll" data-aos="zoom-out-down" data-aos-duration="1400" data-aos-delay="550">
+        <a href="#">
+            <i class="ri-scroll-to-bottom-line"></i>
+            Scroll Down
+        </a>
+    </div>
+
+
+    
+
+    <!-- Scroll Section -->
+    <div class="scroll" data-aos="zoom-out-down" data-aos-duration="1400" data-aos-delay="550">
+        <a href="#">
+            <i class="ri-scroll-to-bottom-line"></i>
+            Scroll Down
+        </a>
+    </div>
+
+    <div class="icons">
+        <a href="https://web.facebook.com/profile.php?id=61551738759630&sk=about&locale=ar_AR" data-aos="fade-in" data-aos-duration="1400" data-aos-delay="600"><i class="ri-facebook-line"></i></a>
+        <a href="#" data-aos="fade-in" data-aos-duration="1400" data-aos-delay="700"><i class="ri-youtube-fill"></i></a>
+        <a href="#" data-aos="fade-in" data-aos-duration="1400" data-aos-delay="800"><i class="ri-instagram-fill"></i></a>
+    </div>
+    </div>
+   
+
+    <!-- JS link -->
+    <script src="lightbox-plus-jquery.min.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset:1,
+      });
+
+      // Check if the user is logged in and update button visibility
+      window.onload = function() {
+            const isLoggedIn = localStorage.getItem('loggedIn');
+            if (isLoggedIn === 'true') {
+                document.getElementById('signInBtn').style.display = 'none';  // Hide Sign In button
+                document.getElementById('logoutBtn').style.display = 'inline-block';  // Show Log Out button
+            }
+        };
+
+        // Logout function to clear the login status
+        function logout() {
+            localStorage.removeItem('loggedIn');  // Remove login status from localStorage
+            document.getElementById('logoutBtn').style.display = 'none';  // Hide Log Out button
+            document.getElementById('signInBtn').style.display = 'inline-block';  // Show Sign In button
+            window.location.href = 'Sign In.html';  // Redirect to Sign In page
+        }
+    </script>
+
+</body>
+</html>
